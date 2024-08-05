@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop-watch</title>
+    <style>
+        * {
+            color: #fff;
+            transition: 3s ease-in-out;
+            user-select: none;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: black;
+            background-image: url("stopwatch.jpeg");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #container {
+            width: 40%;
+            max-width: 500px;
+            height: 300px;
+            border-radius: 15px;
+            border: 2px solid black;
+            background-color: rgb(58, 60, 60);
+            overflow: hidden;
+            box-shadow: 0 0 10px #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        #timer-display {
+            width: 100%;
+            height: 120px;
+            border-bottom: 2px solid black;
+            font-size: 60px;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(47, 43, 43);
+            color: #fff;
+        }
+        .laps {
+            color: #fff;
+            margin-top: 10px;
+            text-align: center;
+            text-decoration: none;
+            background-color: rgb(58, 60, 60);
+        }
+        #action {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 85%;
+            gap: 30px;
+            background-color: rgb(58, 60, 60);
+            color: #fff;
+            margin: 25px 0;
+        }
+        #action button {
+            width: 110px;
+            height: 40px;
+            background-color: #fff;
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 12px;
+        }
+        button:hover {
+            background-color: #000;
+            color: #fff;
+            padding: 7px 17px;
+            border: 2px solid white;
+        }
+        @media (max-width: 640px) {
+            #container {
+                width: 70%;
+                height: 250px;
+                border-radius: 12px;
+                padding: 10px;
+            }
+            #timer-display {
+                height: 80px;
+                font-size: 40px;
+            }
+            #action {
+                grid-template-columns: repeat(3, 1fr);
+                width: 100%;
+                gap: 20px;
+                margin: 15px 0;
+            }
+            #action button {
+                width: 65px;
+                height: 40px;
+                padding: 4px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="timer-display">
+            00:00:00:00
+        </div>
+        <ul class="laps">000</ul>
+        <div id="action">
+            <button id="startTimer" onclick="start()">Start</button>
+            <button id="pauseTimer" onclick="pause()">Pause</button>
+            <button id="resetTimer" onclick="reset()">Reset</button>
+            <button id="restartTimer" onclick="restart()">Restart</button>
+            <button id="lap" onclick="lap()">Lap</button>
+            <button id="resetLap" onclick="resetLap()">Reset Laps</button>
+        </div>
+    </div>
+    <script src="Project2.js"></script>
+</body>
+</html>
